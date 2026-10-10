@@ -2,7 +2,6 @@
 
 **Rock-type Optimization and Classification Kit.** This is a Python library for reproducible lithology classification on public Brazilian ANP well logs. It works with:
 
-- [MALTA-WELD](../MALTA-WELD), which collects the well logs and lithology descriptions and builds the dataset.
 - [MALTA-WLOGS](https://huggingface.co/datasets/MALTA-Lab/MALTA-WLOGS), the dataset MALTA-WELD publishes on Hugging Face.
 - MALTA-ROCK (this repository), which downloads MALTA-WLOGS, prepares the features, splits the data by well, and trains and evaluates the models from the paper.
 
@@ -90,7 +89,7 @@ print(features.attrs["malta_rock"]["revision"])   # provenance of the loaded tab
 
 With `revision=None`, any complete cache is reused as is. Pass `force=True` or a specific revision to update it.
 
-### Bronze-feature schema (verified on the Hub)
+### Bronze-feature schema
 
 This was verified at commit `dd7db33c4803780d629ced50ebb61ddd41575a64`. The 113 Parquet shards are the SQLite `Features` table that MALTA-WELD exported in 500 000-row chunks (`MALTA-WELD/weld/huggingface.py`):
 
@@ -238,5 +237,3 @@ tests/
 ```
 
 Downloaded data (`data/`), SQLite/Optuna databases (`*.db`), pickled models and `results/` are git-ignored.
-
-**Upgrading from the old layout.** The package was previously importable as `src`; it is now `MaltaRock`. For example, `from src.models.forest import RandomForest` becomes `from MaltaRock import RandomForest`.
