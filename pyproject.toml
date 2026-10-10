@@ -1,7 +1,7 @@
 [project]
 name = "malta-rock"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reproducible lithology classification on the MALTA-WLOGS well-log dataset"
 readme = "README.md"
 authors = [
     { name = "Garcez, Vitor", email = "vitor.hugo@edu.pucrs.br" }
@@ -13,23 +13,32 @@ dependencies = [
     "pandas>=3.0.6",
     "pyarrow>=21.0.0",
     "pydantic>=2.13.4",
+    "pyyaml>=6.0",
     "requests>=2.34.2",
     "rich>=15.0.0",
     "scikit-learn>=1.9.1",
-    "torch>=2.14.1",
     "tqdm>=4.70.0",
-    "xgboost>=3.4.1",
 ]
 
-[project.scripts]
-malta-weld = "src.cli:cli"
+[project.optional-dependencies]
+# LSTM / BILSTM
+deep = ["torch>=2.14.1"]
+xgboost = ["xgboost>=3.4.1"]
+all = ["torch>=2.14.1", "xgboost>=3.4.1"]
 
-[tool.pyright]
-ignore = ["src/models"]
+[project.scripts]
+malta-rock = "MaltaRock.cli:cli"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: tests that access the Hugging Face Hub (deselect with -m 'not network')"]
 
 [tool.uv.build-backend]
-module-name = "src"
-module-root = ""
+module-name = "MaltaRock"
+module-root = "src"
 
 [build-system]
 requires = ["uv_build>=0.12.1"]

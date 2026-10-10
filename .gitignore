@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# MALTA-ROCK data, caches and experiment artifacts
+/data/
+*.db
+*.sqlite3
+models/checkpoints/
+/results/
+*.pkl
