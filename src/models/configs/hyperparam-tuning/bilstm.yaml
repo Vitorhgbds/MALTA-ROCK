@@ -1,0 +1,20 @@
+model_type: 'BILSTM'
+params:
+  hidden_size:
+    - 128
+    - 256
+  num_layers:
+    low: 2
+    high: 6
+  dropout:
+    low: 0.1
+    high: 0.3
+    step: 0.1
+  batch_size:
+    - 128
+    - 256
+    - 512
+    - 1024
+    - 2048
+  learning_rate: 0.0001
+  num_workers: 25

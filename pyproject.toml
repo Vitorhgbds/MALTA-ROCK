@@ -1,0 +1,36 @@
+[project]
+name = "malta-rock"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Garcez, Vitor", email = "vitor.hugo@edu.pucrs.br" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "huggingface-hub>=0.35.0",
+    "optuna>=5.0.0",
+    "pandas>=3.0.6",
+    "pyarrow>=21.0.0",
+    "pydantic>=2.13.4",
+    "requests>=2.34.2",
+    "rich>=15.0.0",
+    "scikit-learn>=1.9.1",
+    "torch>=2.14.1",
+    "tqdm>=4.70.0",
+    "xgboost>=3.4.1",
+]
+
+[project.scripts]
+malta-weld = "src.cli:cli"
+
+[tool.pyright]
+ignore = ["src/models"]
+
+[tool.uv.build-backend]
+module-name = "src"
+module-root = ""
+
+[build-system]
+requires = ["uv_build>=0.12.1"]
+build-backend = "uv_build"

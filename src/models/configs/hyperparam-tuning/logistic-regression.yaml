@@ -1,0 +1,11 @@
+model_type: 'LogisticRegression'
+params:
+  max_iter: 
+    - 300
+    - 400
+    - 500
+  C:
+    low: 0.01
+    high: 10.0
+    log: true
+  solver: 'saga'

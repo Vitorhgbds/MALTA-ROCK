@@ -1,0 +1,29 @@
+model_type: 'DecisionTree'
+params:
+  min_samples_split: 10
+  min_samples_leaf: 8
+policy:
+  name: 'clean-1665-wells'
+  total_wells: 1665
+  apply_scaling: true
+  apply_presence: false
+  apply_rolling_stats: false
+  labels:
+    - 'ARENITO'
+    - 'FOLHELHO'
+    - 'SILTITO'
+    - 'CALCILUTITO'
+    - 'CALCARENITO'
+    - 'ARGILITO'
+    - 'CALCARIO'
+    - 'CONGLOMERADO'
+    - 'DIABASIO'
+    - 'ANIDRITA'
+    - 'AREIA'
+    - 'DIAMICTITO'
+    - 'MARGA'
+    - 'ARGILA'
+    - 'DOLOMITO'
+  test_size: 0.2
+  random_state: 42
+trials: 1

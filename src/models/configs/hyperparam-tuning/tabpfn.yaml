@@ -1,0 +1,9 @@
+model_type: 'TABPFN'
+params:
+  device: 'auto'
+  n_preprocessing_jobs: 1
+  ignore_pretraining_limits: true
+  n_estimators: 15
+  alphabet_size: 10
+  fit_mode: 'low_memory'
+  subsample_size: 10_000

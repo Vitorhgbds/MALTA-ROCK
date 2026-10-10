@@ -1,0 +1,31 @@
+model_type: 'RandomForest'
+params:
+  n_estimators: 300
+  min_samples_split: 18
+  min_samples_leaf: 10
+  max_features: 0.5
+policy:
+  name: 'raw-1665-wells'
+  total_wells: 1665
+  apply_scaling: false
+  apply_presence: false
+  apply_rolling_stats: false
+  labels:
+    - 'ARENITO'
+    - 'FOLHELHO'
+    - 'SILTITO'
+    - 'CALCILUTITO'
+    - 'CALCARENITO'
+    - 'ARGILITO'
+    - 'CALCARIO'
+    - 'CONGLOMERADO'
+    - 'DIABASIO'
+    - 'ANIDRITA'
+    - 'AREIA'
+    - 'DIAMICTITO'
+    - 'MARGA'
+    - 'ARGILA'
+    - 'DOLOMITO'
+  test_size: 0.2
+  random_state: 42
+trials: 1

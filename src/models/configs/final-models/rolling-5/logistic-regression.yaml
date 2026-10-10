@@ -1,0 +1,31 @@
+model_type: 'LogisticRegression'
+params:
+  max_iter: 500
+  C: 1.64913162481105
+  solver: 'saga'
+policy:
+  name: 'rolling(5)-1665-wells'
+  total_wells: 1665
+  apply_scaling: true
+  apply_presence: true
+  apply_rolling_stats: true
+  rolling_window: 5
+  labels:
+    - 'ARENITO'
+    - 'FOLHELHO'
+    - 'SILTITO'
+    - 'CALCILUTITO'
+    - 'CALCARENITO'
+    - 'ARGILITO'
+    - 'CALCARIO'
+    - 'CONGLOMERADO'
+    - 'DIABASIO'
+    - 'ANIDRITA'
+    - 'AREIA'
+    - 'DIAMICTITO'
+    - 'MARGA'
+    - 'ARGILA'
+    - 'DOLOMITO'
+  test_size: 0.2
+  random_state: 42
+trials: 1

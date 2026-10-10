@@ -1,0 +1,6 @@
+model_type: 'RandomForest'
+params:
+  n_estimators: 500
+  min_samples_split: 18
+  min_samples_leaf: 10
+  max_features: 0.5
